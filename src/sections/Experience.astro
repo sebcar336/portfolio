@@ -1,19 +1,19 @@
 ---
-import IconClickOn from "../assets/icons/IconClickOn.astro";
-import IconWork from "../assets/icons/IconWork.astro";
+import IconClickOn from "../assets/icons/general/IconClickOn.astro";
+import IconWork from "../assets/icons/general/IconWork.astro";
 import ButtonBg from "../components/ButtonBg.astro";
 import ItemExp from "../components/ItemExp.astro";
 ---
 
 <section class="grid grid-cols-[120px_40px_500px] w-fit mx-auto mb-32">
         <div class="col-span-2 ">
-            <IconWork class="ml-auto mr-1" />
+            <IconWork size="w-10 h-10 ml-auto" color="text-BM-text"/>
         </div>
         <!-- ------- -->
         <div class="col-span-1 flex items-center justify-between mb-8 ">
-            <h3 class="text-3xl font-extrabold pl-1">Experiencia</h3>
+            <h3 class="text-3xl font-extrabold pl-3">Experiencia</h3>
             <ButtonBg text="Descarga mi CV" background_color="bg-violet-600" href="./CV-Juan-Sebastian-Cardoso-Cardona.pdf">
-                <IconClickOn />
+                <IconClickOn size="w-4 h-4" color="text-BM-text"/>
             </ButtonBg>
         </div>
         <!-- ------- -->

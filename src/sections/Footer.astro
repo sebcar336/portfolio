@@ -1,7 +1,7 @@
 ---
-import IconGithub from '../assets/icons/IconGithub.astro';
-import IconLinkedIn from '../assets/icons/IconLinkedIn.astro';
-import IconGmail from '../assets/icons/IconGmail.astro';
+import IconGithub from '../assets/icons/social/IconGithub.astro';
+import IconLinkedIn from '../assets/icons/social/IconLinkedIn.astro';
+import IconGmail from '../assets/icons/social/IconGmail.astro';
 ---
 
 <div class="flex w-full py-20 relative mt-30 border-t border-violet-900/45 gap-2 bg-violet-950/20 bg-opacity-35 inset-shadow-ms backdrop-blur-2xl">
@@ -10,12 +10,12 @@ import IconGmail from '../assets/icons/IconGmail.astro';
         <span class="rotate-90">[:D]</span>
         <nav>
             <ul class="flex w-full gap-10">
-                <button id="CopyEmail" type="button"><IconGmail size="w-10 h-10"/></button>
+                <button id="CopyEmail" type="button"><IconGmail size="w-10 h-10" color="text-BM-text"/></button>
                 <div id="tooltip-copy-email" role="tooltip" class="absolute left-1/5 top-2/5 z-10 invisible px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-purple-900 rounded-lg shadow-xs opacity-0">
                     <span id="tooltip-message">¡Copiado!</span>
                 </div>
-                <a href="https://github.com/sebcar336" target="_blank"><IconGithub size="w-10 h-10"/></a>
-                <a href="https://www.linkedin.com/in/sebcar336" target="_blank"><IconLinkedIn size="w-10 h-10"/></a>
+                <a href="https://github.com/sebcar336" target="_blank"><IconGithub size="w-10 h-10" color="text-BM-text"/></a>
+                <a href="https://www.linkedin.com/in/sebcar336" target="_blank"><IconLinkedIn size="w-10 h-10" color="text-BM-text"/></a>
             </ul>
         </nav>
     </div>
