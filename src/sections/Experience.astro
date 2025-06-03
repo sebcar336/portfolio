@@ -1,0 +1,43 @@
+---
+import IconClickOn from "../assets/icons/IconClickOn.astro";
+import IconWork from "../assets/icons/IconWork.astro";
+import ButtonBg from "../components/ButtonBg.astro";
+import ItemExp from "../components/ItemExp.astro";
+---
+
+<section class="grid grid-cols-[120px_40px_500px] w-fit mx-auto mb-32">
+        <div class="col-span-2 ">
+            <IconWork class="ml-auto mr-1" />
+        </div>
+        <!-- ------- -->
+        <div class="col-span-1 flex items-center justify-between mb-8 ">
+            <h3 class="text-3xl font-extrabold pl-1">Experiencia</h3>
+            <ButtonBg text="Descarga mi CV" background_color="bg-violet-600" href="./CV-Juan-Sebastian-Cardoso-Cardona.pdf">
+                <IconClickOn />
+            </ButtonBg>
+        </div>
+        <!-- ------- -->
+        <ItemExp logo="./logo-periferia-it-group.png" title="Periferia IT Group | Desarrollador de Software">
+            <p class="text-sm font-light">
+                Experiencia en el desarrollo de soluciones con Inteligencia Artificial Generativa para la automatización de procesos empresariales, integrando servicios en la nube como Azure y AWS.
+            </p>
+            <br />
+            <p class="text-sm font-light">
+                Implementación de extensiones para navegadores basados en Chromium, automatizaciones con Power Automate y sistemas de análisis de datos a gran escala para generar reportes y recomendaciones.
+            </p>
+            <br />
+            <p class="text-sm font-light">
+                Trabajo colaborativo en equipos multidisciplinarios bajo metodologías ágiles como Scrum, con enfoque en resultados y eficiencia.
+            </p>
+        </ItemExp>
+        <ItemExp logo="./logo-personal-projects.svg" title="Proyectos personales | Desarrollador Independiente">
+            <p class="text-sm font-light">
+                Desarrollo de páginas web con diseño responsive, priorizando la experiencia del usuario y la compatibilidad en distintos dispositivos.
+            </p>
+            <br />
+            <p class="text-sm font-light">
+                Creación de videojuegos indie para móviles y computadores, abarcando tanto la programación como el diseño visual. Estos proyectos han permitido fortalecer habilidades en front-end, lógica de programación y buenas prácticas de desarrollo en entornos personales.
+            </p>
+        </ItemExp>
+        
+</section>

@@ -1,16 +1,27 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Menu from '../components/Menu.astro';
+import Home from '../sections/Home.astro';
+import Experience from '../sections/Experience.astro';
+import Skills from '../sections/Skills.astro';
+import BgSkillsSection from '../assets/BgSkillsSection.astro';
+import Footer from '../sections/Footer.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Home">
+	<Menu />
+	<header class=" w-full ">
+		<Home />
+	</header>
+	<main class="w-full">
+		<div id="Experience" class="h-25"></div>
+		<Experience />
+		<div id="Skills" class="h-25"></div>
+		<div class="relative flex flex-col items-center justify-center w-full h-full">
+			<BgSkillsSection />
+			<Skills />
+		</div>
+	</main>
+	<footer id="Contact" class="w-full">
+		<Footer />
+	</footer>
+</Layout>
