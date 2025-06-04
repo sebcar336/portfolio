@@ -5,6 +5,8 @@
 @import '@fontsource/poppins/600.css';
 
 @theme {
-    --text-color-BM-text: #aaa;
+    --text-color-BM-text: #fff;
     --text-color-WM-text: #bbbbbb;
+    --bg-color-BM-bg: #fff;
+    --bg-color-WM-bg: #bbbbbb;
 }
