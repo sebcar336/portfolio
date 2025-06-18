@@ -1,22 +1,68 @@
 ---
 import IconMoon from '../assets/icons/general/IconMoon.astro';
+import IconSun from '../assets/icons/general/IconSun.astro';
 import IconSC3 from '../assets/icons/general/IconSC3.astro';
 ---
-<div class="w-full flex justify-around p-3 bg-purple-950 sticky top-0 z-50 ">
+<div class="w-full flex justify-around p-3 bg-sky-600 dark:bg-purple-950 sticky top-0 z-50 ">
     <IconSC3 size="w-10 h-10" color="text-BM-text" />
-    <nav class="flex items-center gap-8 font-medium">
+    <nav class="flex items-center gap-8 font-medium ">
         <a href="#Home" class="text-white hover:text-orange-400 transition-colors">Inicio</a>
         <a href="#Experience" class="text-white hover:text-orange-400 transition-colors">Experiencia</a>
         <a href="#Skills" class="text-white hover:text-orange-400 transition-colors">Habilidades</a>
         <a href="#Contact" class="text-white hover:text-orange-400 transition-colors">Contacto</a>
     </nav>
     <div class="flex items-center gap-4">
-        <select class="font-medium text-1xl cursor-pointer" name="language" id="language">
-            <option class="bg-gray-900" value="ES" selected> ES</option>
-            <option class="bg-gray-900" value="EN">EN</option>
+        <select class="font-medium text-1xl cursor-pointer text-BM-text" name="language" id="language">
+            <option class="bg-sky-600 dark:bg-purple-950 text-BM-text" value="ES" selected> ES</option>
+            <option class="bg-sky-600 dark:bg-purple-950 text-BM-text" value="EN">EN</option>
         </select>
-        <a href="">
-            <IconMoon size="w-6 h-6" color="text-BM-text" />
-        </a>
+        <button id="dark-mode-toggle" class="cursor-pointer" type="button">
+            <IconSun size="w-6 h-6 sunIcon" color="text-BM-text" />
+            <IconMoon size="w-6 h-6 moonIcon" color="text-BM-text" />
+
+        </button>
     </div>
 </div>
+
+
+<script>
+    const themeToggle = document.querySelector('#dark-mode-toggle');
+    const sunIcons = document.querySelectorAll(".sunIcon");
+    const moonIcons = document.querySelectorAll(".moonIcon");
+
+    const getTheme = () => {
+        return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    };
+
+    const applyTheme = (theme:string) => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            moonIcons.forEach(icon => icon.classList.remove('hidden'));
+            sunIcons.forEach(icon => icon.classList.add('hidden'));
+        } else {
+            document.documentElement.classList.remove('dark');
+            moonIcons.forEach(icon => icon.classList.add('hidden'));
+            sunIcons.forEach(icon => icon.classList.remove('hidden'));
+        }
+    };
+
+    const toggleTheme = () => {
+        const currentTheme = getTheme();
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    };
+
+    // Apply theme on initial load
+    applyTheme(getTheme());
+
+    // Add event listener
+    themeToggle?.addEventListener('click', toggleTheme);
+
+    // Listen for changes in system theme
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        const newTheme = e.matches ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    });
+</script>

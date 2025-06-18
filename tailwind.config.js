@@ -6,12 +6,11 @@ module.exports = {
     './src/**/*.{html,js,astro,ts,jsx,tsx}', // analiza todos los archivos relevantes
   ],
   theme: {
+    darkMode: 'class',
     extend: {
       colors:{
-        "color-icon":"hsl(255,0,255)",
-        "color-icon-dark":"hsl(0,0,255)"
       }
     }, // puedes extender colores, fuentes, etc. aquí
   },
-  plugins: [tailwindcss()],
+  plugins: [],
 };

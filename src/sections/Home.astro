@@ -2,15 +2,15 @@
 import Tag from '../components/Tag.astro';
 ---
 
-    <section class="flex justify-center gap-8 min-h-svh pb-40 text-white w-full bg-gradient-to-b from-purple-950 to-slate-950">
-        <img src="./yo.jpg" alt="Sebastian Cardoso" class="w-48 h-48 my-auto object-contain shadow-lg rounded-3xl" />
-        <div class="flex flex-col items-start justify-center">
-            <h1 class="text-4xl font-bold">Hola, soy <span class="text-orange-400">Sebastian Cardoso</span></h1>
-            <h2 class="text-2xl text-purple-300 mb-3.5">Técnico en desarrollo de Software</h2>
-            <p class="w-105">Con una mirada innovadora, no hay límites para explorar nuevas formas de ver y construir el mundo.</p>
-            <div class="flex gap-4">
-                <Tag text='Disponible para trabajar' border_color='border-green-500' />
-                <Tag text='+6 Meses de experiencia' border_color='border-orange-400' />
-            </div>
+<section class="flex justify-center gap-8 min-h-svh pb-40 text-white w-full bg-gradient-to-b dark:from-purple-950 dark:to-slate-950 from-sky-600 to-zinc-300">
+    <img src="./yo.jpg" alt="Sebastian Cardoso" class="w-48 h-48 my-auto object-contain shadow-lg rounded-3xl" />
+    <div class="flex flex-col items-start justify-center">
+        <h1 class="text-4xl font-bold dark:text-BM-text text-WM-text">Hola, soy <span class="dark:text-orange-400 text-purple-950">Sebastian Cardoso</span></h1>
+        <h2 class="text-2xl dark:text-purple-300 text-purple-950 mb-3.5 font-medium">Técnico en desarrollo de Software</h2>
+        <p class="w-105 dark:text-BM-text text-WM-text font-medium">Con una mirada innovadora, no hay límites para explorar nuevas formas de ver y construir el mundo.</p>
+        <div class="flex gap-4">
+            <Tag text='Disponible para trabajar' color='green-500' />
+            <Tag text='+6 Meses de experiencia' color='orange-400' />
         </div>
+    </div>
     </section>
