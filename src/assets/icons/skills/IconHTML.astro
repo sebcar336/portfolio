@@ -7,21 +7,7 @@ interface Props {
 const { size } = Astro.props;
 const color = Astro.props.color || "text-white";
 ---
-
-<svg class=`${size} ${color}` viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g clip-path="url(#clip0_2029_141)">
-  <mask id="mask0_2029_141" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0">
-  <path d="M0 0H48V48H0V0Z" fill="currentColor"/>
-  </mask>
-  <g mask="url(#mask0_2029_141)">
-  <path d="M10.16 0H12.324V2.138H14.304V0H16.468V6.472H14.304V4.306H12.324V6.472H10.162L10.16 0ZM19.312 2.146H17.408V0H23.382V2.146H21.476V6.472H19.312V2.146ZM24.33 0H26.586L27.974 2.274L29.36 0H31.616V6.472H29.462V3.264L27.974 5.566H27.936L26.446 3.266V6.472H24.33V0ZM32.692 0H34.858V4.334H37.898V6.474H32.692V0Z" fill="currentColor"/>
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M10.092 44.1441L6 9.43408H42L37.906 44.1401L23.98 48.0001L10.092 44.1441ZM18.366 25.1441L17.978 20.7841H34.268L34.648 16.5281H13.328L14.476 29.4021H29.23L28.736 34.9221L23.988 36.2061H23.984L19.244 34.9261L18.94 31.5321H14.664L15.26 38.2161L23.98 40.6361L32.714 38.2161L33.778 26.2881L33.882 25.1461L18.366 25.1441Z" fill="currentColor"/>
-  </g>
-  </g>
-  <defs>
-  <clipPath id="clip0_2029_141">
-  <rect class=`w-full h-full` fill="currentColor"/>
-  </clipPath>
-  </defs>
-  </svg>
+<svg class=`${size} ${color}` aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 24 24">
+    <path d="m3 2 1.578 17.824L12 22l7.467-2.175L21 2H3Zm14.049 6.048H9.075l.172 2.016h7.697l-.626 6.565-4.246 1.381-4.281-1.455-.288-2.932h2.024l.16 1.411 2.4.815 2.346-.763.297-3.005H7.416l-.562-6.05h10.412l-.217 2.017Z"/>
+</svg>
   
