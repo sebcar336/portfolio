@@ -5,10 +5,11 @@ module.exports = {
   content: [
     './src/**/*.{html,js,astro,ts,jsx,tsx}', // analiza todos los archivos relevantes
   ],
+  darkMode: 'class', // ← MOVIDO AQUÍ, fuera de theme
   theme: {
-    darkMode: 'class',
     extend: {
       colors:{
+        // tus colores personalizados aquí
       }
     }, // puedes extender colores, fuentes, etc. aquí
   },

@@ -18,51 +18,47 @@ import IconSC3 from '../assets/icons/general/IconSC3.astro';
         </select>
         <button id="dark-mode-toggle" class="cursor-pointer" type="button">
             <IconSun size="w-6 h-6 sunIcon" color="text-BM-text" />
-            <IconMoon size="w-6 h-6 moonIcon" color="text-BM-text" />
-
+            <IconMoon size="w-6 h-6 moonIcon hidden" color="text-BM-text" />
         </button>
     </div>
 </div>
-
-
 <script>
     const themeToggle = document.querySelector('#dark-mode-toggle');
     const sunIcons = document.querySelectorAll(".sunIcon");
     const moonIcons = document.querySelectorAll(".moonIcon");
-
-    const getTheme = () => {
-        return localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    };
-
-    const applyTheme = (theme:string) => {
+    
+    // Variable para mantener el estado actual del tema
+    let currentTheme: string = 'light'; // Empezamos siempre en modo claro
+    
+    const applyTheme = (theme: string) => {
+        currentTheme = theme;
+        
         if (theme === 'dark') {
+            // Aplicar clase dark al html
             document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
             moonIcons.forEach(icon => icon.classList.remove('hidden'));
             sunIcons.forEach(icon => icon.classList.add('hidden'));
+            console.log('Modo oscuro aplicado'); // Debug
         } else {
+            // Remover clase dark del html
             document.documentElement.classList.remove('dark');
+            document.body.classList.remove('dark');
             moonIcons.forEach(icon => icon.classList.add('hidden'));
             sunIcons.forEach(icon => icon.classList.remove('hidden'));
+            console.log('Modo claro aplicado'); // Debug
         }
     };
-
+    
     const toggleTheme = () => {
-        const currentTheme = getTheme();
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
         applyTheme(newTheme);
+        console.log(`Tema cambiado a: ${newTheme}`); // Para debugging
     };
-
-    // Apply theme on initial load
-    applyTheme(getTheme());
-
-    // Add event listener
+    
+    // Inicializar en modo claro al cargar la página
+    applyTheme('dark');
+    
+    // Agregar event listener al botón
     themeToggle?.addEventListener('click', toggleTheme);
-
-    // Listen for changes in system theme
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        const newTheme = e.matches ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        applyTheme(newTheme);
-    });
 </script>
