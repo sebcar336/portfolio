@@ -1,18 +1,24 @@
----
-interface Props {
-	title: string;
-}
-const title = Astro.props.title;
----
-
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="keywords" content="Sebastian Cardoso, Juan Sebastian Cardoso Cardona, desarrollador web, web developer, software developer, desarrollador de software, frontend developer, backend developer, diseñador UX/UI, UI/UX designer, portfolio web, proyectos web, diseño web, React, freelance developer, desarrollador independiente" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://sebcardoso.vercel.app/" />
+		<meta property="og:title" content="Sebastian Cardoso | Portfolio" />
+		<meta property="og:description" content="Portfolio of Sebastian Cardoso — With an innovative mindset, there are no limits to exploring new ways of seeing and building the world." />
+		<meta property="og:image" content="./portfolio-preview.webp" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://sebcardoso.vercel.app/" />
+		<meta name="twitter:title" content="Sebastian Cardoso | Portfolio" />
+		<meta name="twitter:description" content="Portfolio of Sebastian Cardoso — With an innovative mindset, there are no limits to exploring new ways of seeing and building the world." />
+		<meta name="twitter:image" content="https://sebcardoso.vercel.app/portfolio-preview.webp" />
 		<link rel="stylesheet" href="./src/style.css" />
-		<title>{title}</title>
+		<title>Sebastian Cardoso | Portfolio</title>
 	</head>
 	<body id="Home" class="grid place-items-center w-full dark:bg-slate-950 bg-zinc-300 dark:text-white text-slate-950 transition-colors">
 		<slot />
