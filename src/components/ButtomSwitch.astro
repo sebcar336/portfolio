@@ -1,0 +1,23 @@
+---
+const { type, id } = Astro.props;
+---
+<div id={id} class="lang-toggle relative w-20 h-8 bg-blue-200 border-b-cyan-500 dark:bg-indigo-950 dark:border-violet-900 rounded-2xl flex items-center justify-between px-2.5 cursor-pointer select-none" onclick="toggleLang(event)">
+    <div class="lang-slider absolute left-1 top-1 w-8 h-6 bg-blue-500 dark:bg-violet-900 rounded-2xl transition-transform duration-300 ease-in-out"></div>
+    <slot />
+  </div>
+  
+  <script is:inline>
+    function toggleLang(event) {
+      const toggle = event.currentTarget; // El contenedor clickeado
+      const slider = toggle.querySelector(".lang-slider");
+  
+      if (!slider) return;
+  
+      // Alternar la clase del slider individual
+      slider.classList.toggle("translate-x-[40px]");
+  
+      // Aquí podrías emitir un evento personalizado si quieres controlar el idioma fuera de este componente
+      // Ej: dispatchEvent(new CustomEvent('langToggle', { detail: 'en' }))
+    }
+  </script>
+  

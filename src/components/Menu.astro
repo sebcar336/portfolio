@@ -2,8 +2,9 @@
 import IconMoon from '../assets/icons/general/IconMoon.astro';
 import IconSun from '../assets/icons/general/IconSun.astro';
 import IconSC3 from '../assets/icons/general/IconSC3.astro';
+import ButtomSwitch from './ButtomSwitch.astro';
 ---
-<div class="w-full flex justify-around p-3 bg-sky-600 dark:bg-purple-950 sticky top-0 z-50 ">
+<div class="w-full flex justify-around p-3 bg-indigo-400 dark:bg-purple-950 sticky top-0 z-50 ">
     <IconSC3 size="w-10 h-10" color="text-BM-text" />
     <nav class="flex items-center gap-8 font-medium ">
         <a href="#Home" class="text-white hover:text-orange-400 transition-colors">Inicio</a>
@@ -12,53 +13,43 @@ import IconSC3 from '../assets/icons/general/IconSC3.astro';
         <a href="#Contact" class="text-white hover:text-orange-400 transition-colors">Contacto</a>
     </nav>
     <div class="flex items-center gap-4">
-        <select class="font-medium text-1xl cursor-pointer text-BM-text" name="language" id="language">
-            <option class="bg-sky-600 dark:bg-purple-950 text-BM-text" value="ES" selected> ES</option>
-            <option class="bg-sky-600 dark:bg-purple-950 text-BM-text" value="EN">EN</option>
-        </select>
-        <button id="dark-mode-toggle" class="cursor-pointer" type="button">
-            <IconSun size="w-6 h-6 sunIcon" color="text-BM-text" />
-            <IconMoon size="w-6 h-6 moonIcon hidden" color="text-BM-text" />
-        </button>
+        <ButtomSwitch type="lang">
+            <div class="font-medium pt-[2px] z-10 text-BM-text">ES</div>
+            <div class="font-medium pt-[2px] z-10 text-BM-text">EN</div>
+        </ButtomSwitch>
+        <ButtomSwitch type="theme" id="dark-mode-toggle">
+            <IconMoon size="w-5 h-5 z-10" color="text-BM-text" />
+            <IconSun size="w-5 h-5 z-10" color="text-BM-text" />
+        </ButtomSwitch>
     </div>
+    
 </div>
 <script>
-    const themeToggle = document.querySelector('#dark-mode-toggle');
-    const sunIcons = document.querySelectorAll(".sunIcon");
-    const moonIcons = document.querySelectorAll(".moonIcon");
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.querySelector('#dark-mode-toggle');
     
-    // Variable para mantener el estado actual del tema
-    let currentTheme: string = 'light'; // Empezamos siempre en modo claro
-    
-    const applyTheme = (theme: string) => {
-        currentTheme = theme;
+        let currentTheme = 'light';
         
-        if (theme === 'dark') {
-            // Aplicar clase dark al html
-            document.documentElement.classList.add('dark');
-            document.body.classList.add('dark');
-            moonIcons.forEach(icon => icon.classList.remove('hidden'));
-            sunIcons.forEach(icon => icon.classList.add('hidden'));
-            console.log('Modo oscuro aplicado'); // Debug
-        } else {
-            // Remover clase dark del html
-            document.documentElement.classList.remove('dark');
-            document.body.classList.remove('dark');
-            moonIcons.forEach(icon => icon.classList.add('hidden'));
-            sunIcons.forEach(icon => icon.classList.remove('hidden'));
-            console.log('Modo claro aplicado'); // Debug
-        }
-    };
-    
-    const toggleTheme = () => {
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        applyTheme(newTheme);
-        console.log(`Tema cambiado a: ${newTheme}`); // Para debugging
-    };
-    
-    // Inicializar en modo claro al cargar la página
-    applyTheme('dark');
-    
-    // Agregar event listener al botón
-    themeToggle?.addEventListener('click', toggleTheme);
-</script>
+        const applyTheme = (theme:any) => {
+            currentTheme = theme;
+            
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+            }
+        };
+        
+        const toggleTheme = () => {
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(newTheme);
+        };
+        
+        applyTheme('dark');
+        
+        themeToggle?.addEventListener('click', toggleTheme);
+    });
+  </script>
+  
