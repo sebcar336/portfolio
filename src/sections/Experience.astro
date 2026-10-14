@@ -1,23 +1,27 @@
 ---
-import IconClickOn from "../assets/icons/general/IconClickOn.astro";
-import IconWork from "../assets/icons/general/IconWork.astro";
+import IconClickOn from "../components/icons/general/IconClickOn.astro";
+import IconWork from "../components/icons/general/IconWork.astro";
 import ButtonBg from "../components/ButtonBg.astro";
 import ItemExp from "../components/ItemExp.astro";
+import logoUnionTemporal from "../assets/images/logo-union-temporal.webp";
+import logoCitywork from "../assets/images/logo-citywork-150x150.png";
+import logoPeriferia from "../assets/images/logo-periferia-it-group.webp";
+import logoPersonalProjects from "../assets/images/logo-personal-projects.webp";
 ---
 
-<section class="grid grid-cols-[120px_40px_500px] w-fit mx-auto mb-32">
+<section id="Experience" class="grid grid-cols-[64px_28px_1fr] md:grid-cols-[120px_40px_500px] w-full md:w-fit px-4 md:px-0 mx-auto mb-32 mt-25 scroll-mt-25">
         <div class="col-span-2 ">
             <IconWork size="w-8 h-8 ml-auto mr-1" color="dark:text-BM-text text-WM-text"/>
         </div>
         <!-- ------- -->
-        <div class="col-span-1 flex items-center justify-between mb-8 ">
-            <h3 class="text-3xl font-extrabold pl-3">Experiencia</h3>
+        <div class="col-span-1 flex flex-wrap items-center justify-between gap-2 mb-8 ">
+            <h2 class="text-3xl font-extrabold pl-3">Experiencia</h2>
             <ButtonBg text="Descarga mi CV" background_color="dark:bg-violet-600 bg-zinc-400 border border-slate-950/45" href="./Hoja de Vida Tecnica Juan Sebastian Cardoso Cardona.pdf">
                 <IconClickOn size="w-4 h-4" color="text-WM-text dark:text-BM-text"/>
             </ButtonBg>
         </div>
         <!-- ------- -->
-        <ItemExp logo="./logo-union-temporal.webp" title="Unión Temporal Fessanjose Instituto Triángulo – Proyecto EXPERTA | Analista de Datos y Automatización">
+        <ItemExp logo={logoUnionTemporal} title="Unión Temporal Fessanjose Instituto Triángulo – Proyecto EXPERTA | Analista de Datos y Automatización">
             <p class="text-sm font-light">
                 Desarrollo de bots con Python y Selenium para automatizar procesos operativos del proyecto. Scripts de
                 extracción, segregación y estandarización masiva de evidencias documentales, con 3.250 personas
@@ -29,14 +33,14 @@ import ItemExp from "../components/ItemExp.astro";
                 personalizadas. Coordinación del área de call center para atención a más de 10.000 matriculados.
             </p>
         </ItemExp>
-        <ItemExp logo="./logo-citywork-150x150.png" title="CityWork | Desarrollador Web y Diseñador UI/UX | SEO">
+        <ItemExp logo={logoCitywork} title="CityWork | Desarrollador Web y Diseñador UI/UX | SEO">
             <p class="text-sm font-light">
                 Diseño de interfaces y piezas gráficas (banners, secciones, identidad visual) en Figma. Desarrollo e
                 implementación de sitios web empresariales con catálogos a partir de los diseños propios. Gestión de contenido y
                 estructura en WordPress.
             </p>
         </ItemExp>
-        <ItemExp logo="./logo-periferia-it-group.webp" title="Periferia IT Group | Desarrollador de Software">
+        <ItemExp logo={logoPeriferia} title="Periferia IT Group | Desarrollador de Software">
             <p class="text-sm font-light">
                 Experiencia en el desarrollo de soluciones con Inteligencia Artificial Generativa para la automatización de procesos empresariales, integrando servicios en la nube como Azure y AWS.
             </p>
@@ -49,7 +53,7 @@ import ItemExp from "../components/ItemExp.astro";
                 Trabajo colaborativo en equipos multidisciplinarios bajo metodologías ágiles como Scrum, con enfoque en resultados y eficiencia.
             </p>
         </ItemExp>
-        <ItemExp logo="./logo-personal-projects.svg" title="Proyectos personales | Desarrollador Independiente">
+        <ItemExp logo={logoPersonalProjects} title="Proyectos personales | Desarrollador Independiente">
             <p class="text-sm font-light">
                 Desarrollo de páginas web con diseño responsive, priorizando la experiencia del usuario y la compatibilidad en distintos dispositivos.
             </p>

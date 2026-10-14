@@ -1,13 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
     title: string;
-    logo?: string;
+    logo: ImageMetadata;
 }
 const { title, logo } = Astro.props;
 ---
 
-<div class="col-span-1 flex items-center justify-center mr-4">
-    <img class="mt-5 rounded-sm" src={logo} alt="" srcset="">
+<div class="col-span-1 flex items-center justify-center mr-2 md:mr-4">
+    <Image class="mt-5 rounded-sm" src={logo} alt="" />
 </div>
 <!-- ------- -->
 <div class="col-span-1">
@@ -16,7 +18,7 @@ const { title, logo } = Astro.props;
     </div>
 </div>
 <!-- ------- -->
-<div class="col-span-1 p-4">
-    <h4 class="font-medium mb-4">{title}</h4>
+<div class="col-span-1 py-4 pl-2 md:p-4">
+    <h3 class="font-medium mb-4">{title}</h3>
     <slot />
 </div>

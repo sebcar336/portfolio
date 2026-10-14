@@ -2,19 +2,18 @@
 interface Props {
     title: string;
     description: string;
-    icon: string;
     class_icons: string;
     classlist: string;
     class_content: string;
 }
-const { title, description, icon, classlist, class_icons, class_content }: Props = Astro.props;
+const { title, description, classlist, class_icons, class_content }: Props = Astro.props;
 ---
 
 <div class=`transition-transform duration-300 ease-in-out group-hover:scale-95 hover:scale-100 border border-slate-950/45 dark:border-violet-900/45 rounded-md gap-2 bg-gradient-to-b dark:from-indigo-950/20 dark:to-slate-950/70 from-sky-600/20 to-sky-600/30 bg-opacity-35 shadow-md backdrop-blur-2xl ${classlist} p-5`>
     <h3 class="text-3xl font-extrabold">{title}</h3>
-    <div class=`${class_content}`>
-        <p class="text font-light w-[100%] pr-3">{description}</p>
-        <div class=`grid ${class_icons} gap-2`>
+    <div class=`max-xl:flex max-xl:flex-col max-xl:gap-4 ${class_content}`>
+        <p class="text font-light w-[100%] xl:pr-3">{description}</p>
+        <div class=`flex flex-wrap xl:grid ${class_icons} gap-2`>
             <slot/>
         </div>
     </div>

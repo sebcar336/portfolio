@@ -1,40 +1,38 @@
 ---
-import "../style.css"
 import ItemSkills from '../components/ItemSkills.astro';
-import IconGit from '../assets/icons/skills/IconGit.astro';
-import IconGithub from '../assets/icons/social/IconGithub.astro';
-import IconAstro from '../assets/icons/skills/IconAstro.astro';
-import IconTailwind from '../assets/icons/skills/IconTailwind.astro';
-import IconHTML from '../assets/icons/skills/IconHTML.astro';
-import IconCSS from '../assets/icons/skills/IconCSS.astro';
-import IconJs from '../assets/icons/skills/IconJs.astro';
-import IconReact from '../assets/icons/skills/IconReact.astro';
-import IconChromeExtensions from '../assets/icons/skills/IconChromeExtensions.astro';
-import IconAWS from "../assets/icons/skills/IconAWS.astro";
-import IconAzure from "../assets/icons/skills/IconAzure.astro";
-import IconUSA from "../assets/icons/skills/IconUSA.astro";
-import IconFigma from "../assets/icons/skills/IconFigma.astro";
-import IconClipchamp from "../assets/icons/skills/IconClipchamp.astro";
-import IconPython from "../assets/icons/skills/IconPython.astro";
-import IconNodeJs from "../assets/icons/skills/IconNodeJs.astro";
-import IconMySQL from "../assets/icons/skills/IconMySQL.astro";
-import IconPowerAutomate from "../assets/icons/skills/IconPowerAutomate.astro";
-import IconApi from "../assets/icons/skills/IconApi.astro";
-import IconCPlusPlus from "../assets/icons/skills/IconCPlusPlus.astro"; 
-import IconAWSBedrock from "../assets/icons/skills/IconAWSBedrock.astro";
-import IconHuggingFace from "../assets/icons/skills/IconHuggingFace.astro";
-import IconAzureAI from "../assets/icons/skills/IconAzureAI.astro";
-import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
+import IconGit from '../components/icons/skills/IconGit.astro';
+import IconGithub from '../components/icons/social/IconGithub.astro';
+import IconAstro from '../components/icons/skills/IconAstro.astro';
+import IconTailwind from '../components/icons/skills/IconTailwind.astro';
+import IconHTML from '../components/icons/skills/IconHTML.astro';
+import IconCSS from '../components/icons/skills/IconCSS.astro';
+import IconJs from '../components/icons/skills/IconJs.astro';
+import IconReact from '../components/icons/skills/IconReact.astro';
+import IconChromeExtensions from '../components/icons/skills/IconChromeExtensions.astro';
+import IconAWS from "../components/icons/skills/IconAWS.astro";
+import IconAzure from "../components/icons/skills/IconAzure.astro";
+import IconUSA from "../components/icons/skills/IconUSA.astro";
+import IconFigma from "../components/icons/skills/IconFigma.astro";
+import IconClipchamp from "../components/icons/skills/IconClipchamp.astro";
+import IconPython from "../components/icons/skills/IconPython.astro";
+import IconNodeJs from "../components/icons/skills/IconNodeJs.astro";
+import IconMySQL from "../components/icons/skills/IconMySQL.astro";
+import IconPowerAutomate from "../components/icons/skills/IconPowerAutomate.astro";
+import IconApi from "../components/icons/skills/IconApi.astro";
+import IconCPlusPlus from "../components/icons/skills/IconCPlusPlus.astro"; 
+import IconAWSBedrock from "../components/icons/skills/IconAWSBedrock.astro";
+import IconHuggingFace from "../components/icons/skills/IconHuggingFace.astro";
+import IconAzureAI from "../components/icons/skills/IconAzureAI.astro";
+import IconCopilotStudio from "../components/icons/skills/IconCopilotStudio.astro";
 ---
-<h2 class="mb-10 text-4xl font-extrabold">Conocimientos Técnicos</h2>
-<div class="group grid grid-cols-[300px_300px_200px_300px] grid-rows-[auto_auto_auto] gap-2 w-fit">
+<h2 class="mb-10 px-4 text-3xl md:text-4xl text-center font-extrabold">Conocimientos Técnicos</h2>
+<div class="group grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[300px_300px_200px_300px] xl:grid-rows-[auto_auto_auto] gap-2 w-full max-w-xl md:max-w-4xl xl:max-w-none xl:w-fit px-4 xl:px-0">
     <ItemSkills 
     title="Frontend" 
     description="Diseño de interfaces web modernas y responsivas con HTML, CSS, JavaScript, React y Tailwind. Creación de extensiones para navegadores Chromium orientadas a mejorar la experiencia del usuario." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="col-start-3 grid-cols-3 grid-rows-3"
-    classlist="col-span-2 flex flex-col items-start"
-    class_content="grid grid-cols-[70%_1fr]">
+    class_icons="xl:col-start-3 xl:grid-cols-3 xl:grid-rows-3"
+    classlist="xl:col-span-2 flex flex-col items-start"
+    class_content="xl:grid xl:grid-cols-[70%_1fr]">
         <IconAstro size="w-10 h-10 col-start-2" color="text-WM-text dark:text-BM-text"/>
         <IconHTML size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconTailwind size="w-10 h-10 col-start-2" color="text-WM-text dark:text-BM-text"/>
@@ -47,10 +45,9 @@ import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
     <ItemSkills 
     title="Metodologías Ágiles" 
     description="Trabajo bajo marcos ágiles como SCRUM, priorizando la colaboración constante y las entregas iterativas. Utilizo Git y GitHub para control de versiones, gestión de código y trabajo colaborativo eficiente en entornos de desarrollo distribuidos." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="col-start-3 grid-cols-1 grid-rows-1 mt-12"
-    classlist="col-span-2 col-start-3 flex flex-col items-start"
-    class_content="grid grid-cols-[80%_1fr]">
+    class_icons="xl:col-start-3 xl:grid-cols-1 xl:grid-rows-1 xl:mt-12"
+    classlist="xl:col-span-2 xl:col-start-3 flex flex-col items-start"
+    class_content="xl:grid xl:grid-cols-[80%_1fr]">
         <IconGit size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconGithub size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
     </ItemSkills>
@@ -58,10 +55,9 @@ import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
     <ItemSkills 
     title="IA" 
     description="Desarrollo de soluciones con Inteligencia Artificial Generativa y analítica avanzada, tanto en entornos on-premise como en la nube, utilizando servicios como AWS Bedrock, Azure AI Services y Copilot Studio para automatizar procesos y generar insights valiosos para el negocio." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="row-start-2 grid-cols-[1fr_1fr] grid-rows-[1fr_1fr] h-fit w-fit ml-auto mt-12"
-    classlist="row-span-2 row-start-2"
-    class_content="grid grid-rows-[1fr_w-fit]">
+    class_icons="xl:row-start-2 xl:grid-cols-[1fr_1fr] xl:grid-rows-[1fr_1fr] xl:h-fit xl:w-fit xl:ml-auto xl:mt-12"
+    classlist="xl:row-span-2 xl:row-start-2"
+    class_content="xl:grid xl:grid-rows-[1fr_w-fit]">
         <IconAWSBedrock size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconHuggingFace size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconAzureAI size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
@@ -71,10 +67,9 @@ import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
     <ItemSkills 
     title="Backend" 
     description="Implementación de lógica de servidor, automatización y gestión de datos con Python, Node.js, C++ y SQL. También he trabajado con APIs para conectar sistemas y con Power Automate para crear flujos que optimizan tareas y mejoran la eficiencia operativa." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="col-start-3 grid-rows-[1fr_1fr_1fr] grid-cols-[1fr_1fr] h-fit w-fit ml-auto mt-12"
-    classlist="col-span-2 col-start-2 row-start-2 flex flex-col items-start"
-    class_content="grid grid-cols-[70%_1fr]">
+    class_icons="xl:col-start-3 xl:grid-rows-[1fr_1fr_1fr] xl:grid-cols-[1fr_1fr] xl:h-fit xl:w-fit xl:ml-auto xl:mt-12"
+    classlist="xl:col-span-2 xl:col-start-2 xl:row-start-2 flex flex-col items-start"
+    class_content="xl:grid xl:grid-cols-[70%_1fr]">
         <IconPython size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconNodeJs size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconCPlusPlus size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
@@ -86,10 +81,9 @@ import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
     <ItemSkills 
     title="Cloud" 
     description="Implementación de soluciones escalables, seguras y de alto rendimiento en la nube, con enfoque en almacenamiento, cómputo y servicios gestionados." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="row-start-2 grid-cols-[1fr_1fr] h-fit w-fit ml-auto"
-    classlist="col-start-4"
-    class_content="grid grid-rows-[1fr_h-fit] gap-2">
+    class_icons="xl:row-start-2 xl:grid-cols-[1fr_1fr] xl:h-fit xl:w-fit xl:ml-auto"
+    classlist="xl:col-start-4"
+    class_content="xl:grid xl:grid-rows-[1fr_h-fit] xl:gap-2">
         <IconAWS size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconAzure size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
     </ItemSkills>
@@ -97,20 +91,18 @@ import IconCopilotStudio from "../assets/icons/skills/IconCopilotStudio.astro";
     <ItemSkills 
     title="Idiomas" 
     description=`Inglés (Nivel A2). Capacidad de comprensión y comunicación escrita en contextos técnicos y colaborativos de alcance internacional.` 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="row-start-2 grid-cols-1 h-fit w-fit ml-auto mt-2"
-    classlist="col-start-2 row-start-3"
-    class_content="grid grid-rows-[1fr_h-fit] gap-2">
+    class_icons="xl:row-start-2 xl:grid-cols-1 xl:h-fit xl:w-fit xl:ml-auto xl:mt-2"
+    classlist="xl:col-start-2 xl:row-start-3"
+    class_content="xl:grid xl:grid-rows-[1fr_h-fit] xl:gap-2">
         <IconUSA size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
     </ItemSkills>
 
     <ItemSkills 
     title="Diseño UI UX" 
     description="Diseño de interfaces y prototipos en Figma, además de creación de contenido visual y edición multimedia con ClipChamp para apoyar la presentación de soluciones y productos digitales." 
-    icon="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    class_icons="col-start-3 grid-cols-[1fr_1fr] h-fit w-fit ml-auto mt-25"
-    classlist="col-span-2 col-start-3 row-start-3"
-    class_content="grid grid-rows-[auto_1fr_auto] h-full">
+    class_icons="xl:col-start-3 xl:grid-cols-[1fr_1fr] xl:h-fit xl:w-fit xl:ml-auto xl:mt-25"
+    classlist="xl:col-span-2 xl:col-start-3 xl:row-start-3"
+    class_content="xl:grid xl:grid-rows-[auto_1fr_auto] xl:h-full">
         <IconFigma size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
         <IconClipchamp size="w-10 h-10" color="text-WM-text dark:text-BM-text"/>
     </ItemSkills>

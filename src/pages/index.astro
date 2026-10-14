@@ -4,22 +4,20 @@ import Menu from '../components/Menu.astro';
 import Home from '../sections/Home.astro';
 import Experience from '../sections/Experience.astro';
 import Skills from '../sections/Skills.astro';
-import BgSkillsSection from '../assets/BgSkillsSection.astro';
+import BgSkillsSection from '../components/BgSkillsSection.astro';
 import Footer from '../sections/Footer.astro';
 ---
-<Layout title="Home">
+<Layout>
 	<Menu />
 	<header class=" w-full ">
 		<Home />
 	</header>
-	<main class="w-full">
-		<div id="Experience" class="h-25"></div>
+	<main class="w-full flex flex-col">
 		<Experience />
-		<div id="Skills" class="h-25"></div>
-		<div class="relative flex flex-col items-center justify-center w-full h-full">
+		<section id="Skills" class="relative flex flex-col items-center justify-center w-full h-full mt-25 scroll-mt-25">
 			<BgSkillsSection />
 			<Skills />
-		</div>
+		</section>
 	</main>
 	<footer id="Contact" class="w-full">
 		<Footer />

@@ -1,51 +1,61 @@
 ---
-import IconMoon from '../assets/icons/general/IconMoon.astro';
-import IconSun from '../assets/icons/general/IconSun.astro';
-import IconSC3 from '../assets/icons/general/IconSC3.astro';
-import ButtomSwitch from './ButtomSwitch.astro';
+import IconMoon from './icons/general/IconMoon.astro';
+import IconSun from './icons/general/IconSun.astro';
+import IconSC3 from './icons/general/IconSC3.astro';
+import ThemeSwitch from './ThemeSwitch.astro';
 ---
-<div class="w-full flex justify-around p-3 bg-indigo-400 dark:bg-purple-950 sticky top-0 z-50 ">
+<div class="w-full flex flex-wrap items-center justify-between md:justify-around py-3 px-5 bg-indigo-400 dark:bg-purple-950 sticky top-0 z-50">
     <IconSC3 size="w-10 h-10" color="text-BM-text" />
-    <nav class="flex items-center gap-8 font-medium ">
+    <nav id="main-nav" class="flex max-md:hidden max-md:order-last max-md:w-full max-md:flex-col max-md:pt-4 items-center gap-4 md:gap-8 font-medium ">
         <a href="#Home" class="text-white hover:text-orange-400 transition-colors">Inicio</a>
         <a href="#Experience" class="text-white hover:text-orange-400 transition-colors">Experiencia</a>
         <a href="#Skills" class="text-white hover:text-orange-400 transition-colors">Habilidades</a>
         <a href="#Contact" class="text-white hover:text-orange-400 transition-colors">Contacto</a>
     </nav>
     <div class="flex items-center gap-4">
-        <ButtomSwitch type="theme" id="dark-mode-toggle">
+        <ThemeSwitch type="theme" id="dark-mode-toggle">
             <IconMoon size="w-5 h-5 z-10" color="text-BM-text" />
             <IconSun size="w-5 h-5 z-10" color="text-BM-text" />
-        </ButtomSwitch>
+        </ThemeSwitch>
+        <button id="menu-toggle" type="button" class="md:hidden text-white cursor-pointer" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+        </button>
     </div>
     
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const themeToggle = document.querySelector('#dark-mode-toggle');
-    
-        let currentTheme = 'light';
-        
-        const applyTheme = (theme:any) => {
-            currentTheme = theme;
-            
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                document.body.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                document.body.classList.remove('dark');
-            }
+        const root = document.documentElement;
+
+        const syncToggle = () => {
+            themeToggle?.setAttribute('aria-checked', String(root.classList.contains('dark')));
         };
-        
+
         const toggleTheme = () => {
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            applyTheme(newTheme);
+            const isDark = root.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            syncToggle();
         };
-        
-        applyTheme('dark');
+
+        syncToggle();
         
         themeToggle?.addEventListener('click', toggleTheme);
+        
+        const menuToggle = document.querySelector('#menu-toggle');
+        const nav = document.querySelector('#main-nav');
+
+        const setMenuOpen = (open:boolean) => {
+            nav?.classList.toggle('max-md:hidden', !open);
+            menuToggle?.setAttribute('aria-expanded', String(open));
+        };
+
+        menuToggle?.addEventListener('click', () => {
+            setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true');
+        });
+        // Cierra el menú al navegar a una sección
+        nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenuOpen(false)));
     });
   </script>
-  
