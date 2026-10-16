@@ -1,20 +1,27 @@
 ---
 import '../style.css';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import { defaultLang, languages, useTranslations } from '../i18n/ui';
 
 interface Props {
 	title?: string;
 	description?: string;
 }
+const lang = Astro.currentLocale ?? defaultLang;
+const t = useTranslations(lang);
+
 const {
-	title = 'Sebastian Cardoso | Portfolio',
-	description = 'Portafolio de Sebastian Cardoso, técnico en desarrollo de software: experiencia en desarrollo web, automatización e IA generativa, conocimientos técnicos y contacto.',
+	title = t.meta.title,
+	description = t.meta.description,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const previewImage = new URL('/portfolio-preview.webp', Astro.site);
+// Versiones de esta página en cada idioma, para Google (hreflang)
+const alternates = Object.keys(languages).map((code) => ({ code, href: getAbsoluteLocaleUrl(code) }));
 ---
 <!DOCTYPE html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,10 +37,13 @@ const previewImage = new URL('/portfolio-preview.webp', Astro.site);
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
+		{alternates.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+		<link rel="alternate" hreflang="x-default" href={getAbsoluteLocaleUrl(defaultLang)} />
 		<meta name="keywords" content="Sebastian Cardoso, Juan Sebastian Cardoso Cardona, desarrollador web, web developer, software developer, desarrollador de software, frontend developer, backend developer, diseñador UX/UI, UI/UX designer, portfolio web, proyectos web, diseño web, React, freelance developer, desarrollador independiente" />
 
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:locale" content={t.meta.ogLocale} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={previewImage} />

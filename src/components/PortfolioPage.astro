@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Menu from '../components/Menu.astro';
+import Home from '../sections/Home.astro';
+import Experience from '../sections/Experience.astro';
+import Skills from '../sections/Skills.astro';
+import BgSkillsSection from '../components/BgSkillsSection.astro';
+import Footer from '../sections/Footer.astro';
+---
+<Layout>
+	<Menu />
+	<header class=" w-full ">
+		<Home />
+	</header>
+	<main class="w-full flex flex-col">
+		<Experience />
+		<section id="Skills" class="relative flex flex-col items-center justify-center w-full h-full mt-25 scroll-mt-25">
+			<BgSkillsSection />
+			<Skills />
+		</section>
+	</main>
+	<footer id="Contact" class="w-full">
+		<Footer />
+	</footer>
+</Layout>

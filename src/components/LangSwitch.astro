@@ -1,0 +1,30 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { defaultLang, type Lang, useTranslations } from '../i18n/ui';
+
+const lang = (Astro.currentLocale ?? defaultLang) as Lang;
+const t = useTranslations(lang);
+
+// El botón lleva siempre al otro idioma: "/" <-> "/en/"
+const target: Lang = lang === 'es' ? 'en' : 'es';
+const href = getRelativeLocaleUrl(target);
+---
+<a id="lang-toggle" href={href} hreflang={target} aria-label={t.nav.switchLanguage} class="relative w-20 h-8 bg-blue-200 dark:bg-indigo-950 rounded-2xl flex items-center justify-between px-2.5 select-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400">
+    <span class:list={['lang-slider absolute left-1 top-1 w-8 h-6 bg-blue-500 dark:bg-violet-900 rounded-2xl transition-transform duration-300 ease-in-out', { 'translate-x-[40px]': lang === 'en' }]}></span>
+    <span aria-hidden="true" class="font-medium pt-[2px] z-10 text-BM-text">ES</span>
+    <span aria-hidden="true" class="font-medium pt-[2px] z-10 text-BM-text">EN</span>
+</a>
+
+<script>
+    // Mueve la bolita antes de cambiar de página y conserva la sección actual (#Experience, etc.)
+    const link = document.querySelector<HTMLAnchorElement>('#lang-toggle');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    link?.addEventListener('click', (event) => {
+        event.preventDefault();
+        const goTo = () => { window.location.href = link.href + window.location.hash; };
+        if (reduceMotion) return goTo();
+        link.querySelector('.lang-slider')?.classList.toggle('translate-x-[40px]');
+        setTimeout(goTo, 300);
+    });
+</script>
